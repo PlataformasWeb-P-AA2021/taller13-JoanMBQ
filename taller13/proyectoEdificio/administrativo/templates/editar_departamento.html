@@ -1,0 +1,44 @@
+{% extends "master.html" %}
+
+{% block content %}
+<h2>Editar Departamento</h3>
+
+<form action="" method="post">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-6">
+      <div class="mb-3">
+        <FONT COLOR="red">{{ formulario.nombre_propietario.errors }}</FONT>
+        <label for="nombre_propietario" class="form-label">Nombre del propietario: </label>
+        {{ formulario.nombre_propietario }}
+      </div>
+      <div class="mb-3">
+        <FONT COLOR="red">{{ formulario.costo.errors }}</FONT>
+        <label for="costo" class="form-label">Costo del departamento: </label>
+        {{ formulario.costo }}
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="mb-3">
+        <FONT COLOR="red">{{ formulario.num_cuartos.errors }}</FONT>
+        <label for="num_cuartos" class="form-label">Número de cuartos: </label>
+        {{ formulario.num_cuartos }}
+      </div>
+      <div class="mb-3">
+        <FONT COLOR="red">{{ formulario.edificio.errors }}</FONT>
+        <label for="edificio" class="form-label">Edificio: </label>
+        {{ formulario.edificio }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p class="flex-center"><input class="btn btn-primary" type='submit' value='Actualizar' /></p>
+    </div>
+  </div>
+
+
+
+</form>
+
+{% endblock %}

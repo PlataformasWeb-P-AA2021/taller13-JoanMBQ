@@ -1,0 +1,63 @@
+{% extends "master.html" %}
+
+{% block title %}
+Listado de Edificios
+{% endblock %}
+
+{% block content %}
+<h3>Número total de edificios: {{ numero_edificios }}</h3>
+
+<br>
+<table class="table table-bordered" id="tabla_edificios">
+
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Direccion</th>
+      <th>Ciudad</th>
+      <th>Tipo </th>
+      <th>Departamentos </th>
+      <th>Opciones</th>
+    </tr>
+  </thead>
+
+  {% for e in edificios %}
+  <tbody>
+    <tr>
+      <td> {{e.nombre}}</td>
+      <td> {{e.direccion}}</td>
+      <td> {{e.ciudad}}</td>
+      <td> {{e.tipo}}</td>
+      <td>
+        <ul>
+          {% for d in e.departamentos.all %}
+          <li class="mt-1">
+            <span>{{ d }} - 
+              <a href="{% url 'editar_departamento' d.id %}"><i class="far fa-edit"></i></a>
+              <a href="{% url 'eliminar_departamento' d.id %}" onclick="return confirm('¿Está seguro de la eliminación?')"><i class="fas fa-trash"></i></a>
+            </span>
+          </li>
+          {% endfor %}
+        </ul>
+        <span><b>Total de cuartos:</b> {{ e.obtener_total_cuartos }}</span><br>
+        <span><b>Costo total de departamentos:</b> {{ e.obtener_costo_departamentos }}</span> <br>
+        <a href="{% url 'crear_departamento_edificio' e.id%}"><i class="fas fa-plus">&nbsp Departamento</i></a>
+      </td>
+      <td>
+          <a  href="{% url 'obtener_edificio' e.id %}"><i class="far fa-eye"></i></a>
+          <a  href="{% url 'editar_edificio' e.id %}"><i class="far fa-edit"></i></a>
+          <a  href="{% url 'eliminar_edificio' e.id %}"onclick="return confirm('¿Está seguro de la eliminación?')">
+          <i class="fas fa-trash"></i></a>
+      </td>
+    </tr>
+  </tbody>
+
+  {% endfor %}
+</table>
+<br>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#tabla_edificios').DataTable();
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,160 @@
+/* manejo de las características de la etiqueta body*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #FEFEFD;
+}
+
+footer {
+  background: rgba(52, 59, 64, 0.9);
+  color: #FFF;
+  min-height: 40px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+a:hover{
+  text-decoration: none !important;
+}
+
+.titulo{
+  background-color: #efefef;
+  padding: 0.01em 16px;
+  text-align: center;
+  border: 1px 0  solid;
+  padding: 10px;
+  box-shadow: 5px 5px 25px;
+}
+
+.titulo h1,h2{
+  color: #000;
+  display: block;
+  font-weight: bold;
+  margin-block-start: 0.4em;
+  margin-block-end: 0.4em;
+}
+
+.titulo h2{
+  font-weight: bold;
+  margin-block-start: 0.4em;
+  margin-block-end: 0.4em;
+}
+
+.container-body{
+  padding: 2em 15px;
+  min-height: calc(100vh -  91px);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer p{
+  margin: 10px 0;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+  border-bottom: 1px solid black;
+}
+
+tr:hover {
+  background-color: #258EAD;
+}
+
+input[type=text], input[type=number] {
+  width: 25%;
+  padding: 5px 5px;
+  box-sizing: border-box;
+}
+
+input[type=text|number]:focus {
+  border: 3px solid blue;
+}
+
+label {
+  padding: 12px 10px;
+}
+/* manejo de las características de las clases*/
+
+.colorceldsprintfa{
+  background: #9999FF;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.miformulario{
+  width: 40%;
+}
+
+.nombre_usuario, .messages {
+  padding-left: 15px;
+  color: red;
+}
+
+footer{
+  background: #5E5E5E;
+  color: #FFF;
+}
+
+#sidebar-container{
+  min-height: 100hv;
+}
+
+#sidebar-container .logo{
+  max-height: 200px;
+  max-width: 200px;
+  padding: .875rem 1.25rem;
+  display:block;
+  margin:auto;
+}
+
+#sidebar-container .menu{
+  width: 18rem;
+}
+
+#sidebar-container a{
+  color: #fff !important;
+}
+
+.bg {
+  background-color:  #111B54 !important;
+}
+
+/*
+ICONOS
+*/
+td .fa-plus{
+  padding-left: 15px;
+  color: green;
+}
+span .fa-edit{
+  padding: 0;
+}
+.fa-eye{
+  padding-left: 15px;
+  color: orange;
+}
+
+.fa-edit{
+  padding-left: 15px;
+}
+
+.fa-trash{
+  padding-left: 15px;
+  color: red;
+}

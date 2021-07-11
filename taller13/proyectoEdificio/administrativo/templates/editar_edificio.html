@@ -1,0 +1,42 @@
+{% extends "master.html" %}
+
+{% block content %}
+<h2>Editar Edificio</h3>
+<br>
+<form action="" method="post">
+  {% csrf_token %}
+  <div class="row">
+      <div class="col-6">
+        <div class="mb-3">
+          <FONT COLOR="red">{{ formulario.nombre.errors }}</FONT>
+          <label for="nombre" class="form-label">Nombre del edificio: </label>
+          {{ formulario.nombre }}
+        </div>
+        <div class="mb-3">
+          <FONT COLOR="red">{{ formulario.direccion.errors }}</FONT>
+          <label for="direccion" class="form-label">Dirección del edificio: </label>
+          {{ formulario.direccion }}
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="mb-3">
+          <FONT COLOR="red">{{ formulario.ciudad.errors }}</FONT>
+          <label for="ciudad" class="form-label">Ciudad: </label>
+          {{ formulario.ciudad }}
+        </div>
+        <div class="mb-3">
+          <FONT COLOR="red">{{ formulario.tipo.errors }}</FONT>
+          <label for="tipo" class="form-label">Tipo: </label>
+          {{ formulario.tipo }}
+        </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-12">
+        <p class="flex-center"><input class="btn btn-primary" type='submit' value='Actualizar'/></p>
+      </div>
+  </div>
+</form>
+
+
+{% endblock %}
